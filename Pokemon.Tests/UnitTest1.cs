@@ -7,11 +7,11 @@ namespace Pokemon.Tests
     [TestClass]
     public class UnitTest1
     {
-        TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
-
+       
         [TestMethod]
         public void BasicStatsProps()
         {
+            TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
 
             tester.CheckFullProperty("HP_Base", typeof(int));
             tester.CheckFullProperty("Attack_Base", typeof(int));
@@ -24,6 +24,8 @@ namespace Pokemon.Tests
         [TestMethod]
         public void ExtraStatsProps()
         {
+            TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
+
             tester.CheckAutoProperty("Naam", typeof(string));
             tester.CheckAutoProperty("Type", typeof(string));
             tester.CheckAutoProperty("Nummer", typeof(int));
@@ -32,6 +34,8 @@ namespace Pokemon.Tests
         [TestMethod]
         public void LevelTest()
         {
+            TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
+
             if (tester.CheckFullProperty("Level", typeof(int), propType: TimsEpicClassAnalyzer.PropertyTypes.PrivateSetPublicGet))
             {
                 if (tester.CheckMethod("VerhoogLevel", typeof(void)))
@@ -49,6 +53,8 @@ namespace Pokemon.Tests
         [TestMethod]
         public void StatistiekenTest()
         {
+            TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
+
             if (tester.CheckFullProperty("Average", typeof(double), propType: TimsEpicClassAnalyzer.PropertyTypes.NoSet))
             {
                 tester.SetProp("HP_Base", 30);
@@ -76,6 +82,7 @@ namespace Pokemon.Tests
         [TestMethod]
         public void LevelbasedStatsProps()
         {
+            TimsEpicClassAnalyzer tester = new TimsEpicClassAnalyzer(new PokemonGottaCatchmAll.Pokemon());
 
             tester.CheckFullProperty("HP_Full", typeof(int), propType: TimsEpicClassAnalyzer.PropertyTypes.NoSet);
             tester.CheckFullProperty("Attack_Full", typeof(int), propType: TimsEpicClassAnalyzer.PropertyTypes.NoSet);
